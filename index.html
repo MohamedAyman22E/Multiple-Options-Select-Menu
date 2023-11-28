@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="pro.css" />
+    <link rel="stylesheet" href="all.min.css" />
+    <title>Document</title>
+  </head>
+  <body>
+    <div class="contaner">
+      <div class="select-btn">
+        <span class="selectText"> select language </span>
+        <span class="arrow-btn">
+          <i class="fa-solid fa-arrow-up"></i>
+        </span>
+      </div>
+
+      <ul class="list-item">
+        <li class="item">
+          <span class="check-box">
+            <i class="fa-solid fa-check"></i>
+          </span>
+          <span class="item-text"> html&css </span>
+        </li>
+
+        <li class="item">
+          <span class="check-box">
+            <i class="fa-solid fa-check"></i>
+          </span>
+          <span class="item-text"> bootstrap </span>
+        </li>
+
+        <li class="item">
+          <span class="check-box">
+            <i class="fa-solid fa-check"></i>
+          </span>
+          <span class="item-text"> javascript </span>
+        </li>
+
+        <li class="item">
+          <span class="check-box">
+            <i class="fa-solid fa-check"></i>
+          </span>
+          <span class="item-text"> node.js </span>
+        </li>
+
+        <li class="item">
+          <span class="check-box">
+            <i class="fa-solid fa-check"></i>
+          </span>
+          <span class="item-text"> react.js </span>
+        </li>
+
+        <li class="item">
+          <span class="check-box">
+            <i class="fa-solid fa-check"></i>
+          </span>
+          <span class="item-text"> mango dp </span>
+        </li>
+      </ul>
+    </div>
+
+    <script>
+      let selectBtn = document.querySelector(".select-btn");
+      let listItem = document.querySelector(".list-item");
+      let listItems = document.querySelectorAll(".item");
+      let arrowBtn = document.querySelector(".arrow-btn");
+
+      selectBtn.addEventListener("click", () => {
+        listItem.classList.toggle("open");
+        arrowBtn.classList.toggle("open");
+      });
+
+      listItems.forEach((element) => {
+        element.addEventListener("click", () => {
+          element.classList.toggle("checked");
+
+          let checked = document.querySelectorAll(".checked")
+          let selectText = document.querySelector(".selectText");
+
+          if(checked && checked.length >=1){
+            selectText.innerHTML = `${checked.length} selected`
+          }else{
+            selectText.innerHTML = `select language`
+
+          }
+        });
+      });
+    </script>
+  </body>
+</html>
