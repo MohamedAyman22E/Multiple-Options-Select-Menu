@@ -3,8 +3,8 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link rel="stylesheet" href="pro.css" />
-    <link rel="stylesheet" href="all.min.css" />
+    <link rel="stylesheet" href="css/pro.css" />
+    <link rel="stylesheet" href="css/all.min.css" />
     <title>Document</title>
   </head>
   <body>
@@ -72,18 +72,17 @@
         arrowBtn.classList.toggle("open");
       });
 
-      listItems.forEach((element) => {
+      listItems.forEach(element => {
         element.addEventListener("click", () => {
           element.classList.toggle("checked");
 
-          let checked = document.querySelectorAll(".checked")
+          let checked = document.querySelectorAll(".checked");
           let selectText = document.querySelector(".selectText");
 
-          if(checked && checked.length >=1){
-            selectText.innerHTML = `${checked.length} selected`
-          }else{
-            selectText.innerHTML = `select language`
-
+          if (checked && checked.length >= 1) {
+            selectText.innerHTML = `${checked.length} selected`;
+          } else {
+            selectText.innerHTML = `select language`;
           }
         });
       });
